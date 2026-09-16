@@ -1,0 +1,6 @@
+{
+  "name": "Dr. Priti Prakhar's Skin Care Clinic",
+  "description": "Boutique dermatology and cosmetology practice by Dr. Priti Prakhar in Purnia, Bihar. Made-to-measure clinical care where science meets the art of skin.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

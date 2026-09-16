@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-ivory: #F7F5F0;
+    --color-charcoal: #1A1A1A;
+    --color-gold: #B08D57;
+    --color-gold-light: #C9A977;
+    --color-gold-muted: #99743E;
+  }
+
+  body {
+    background-color: #F7F5F0;
+    color: #1A1A1A;
+    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* When desktop custom cursor is active, hide system cursor to eliminate double cursor defect */
+  @media (pointer: fine) {
+    body.custom-cursor-enabled,
+    body.custom-cursor-enabled a,
+    body.custom-cursor-enabled button,
+    body.custom-cursor-enabled [role="button"],
+    body.custom-cursor-enabled input,
+    body.custom-cursor-enabled textarea,
+    body.custom-cursor-enabled select {
+      cursor: none !important;
+    }
+  }
+
+  h1, h2, h3, h4, .font-editorial {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-feature-settings: "liga" 1, "dlig" 1;
+  }
+
+  .font-hindi {
+    font-family: 'Noto Serif Devanagari', 'Rozha One', serif;
+  }
+
+  /* Custom subtle scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #F7F5F0;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #D8D2C4;
+    border-radius: 3px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #B08D57;
+  }
+}
+
+/* Film grain texture */
+.film-grain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 999;
+  opacity: 0.04;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Gold hairline animation */
+@keyframes hairlineDraw {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+.animate-hairline {
+  transform-origin: left;
+  animation: hairlineDraw 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Rich natural skin radiance and true-color clarity */
+.clinical-monochrome {
+  filter: contrast(102%) brightness(101%) saturate(106%);
+  transition: filter 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.clinical-monochrome:hover {
+  filter: contrast(104%) brightness(102%) saturate(110%);
+}
+
+/* Clear Vibrant Map */
+.desaturated-map {
+  filter: contrast(102%) saturate(100%);
+  transition: filter 0.5s ease;
+}
+.desaturated-map:hover {
+  filter: contrast(105%) saturate(110%);
+}
+
